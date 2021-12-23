@@ -31,7 +31,9 @@ type DashboardProps = {
 type MintForm = { id: string, type: NftCollection_Type, isLazySupported: boolean, isLazy: boolean, loading: boolean }
 
 const mintFormInitial: MintForm = {
-	id: "0x6ede7f3c26975aad32a475e1021d8f6f39c89d82", // default collection on "rinkeby" that supports lazy minting
+	//id: "0x6ede7f3c26975aad32a475e1021d8f6f39c89d82", // default collection on "rinkeby" that supports lazy minting
+	//id: "0xB0EA149212Eb707a1E5FC1D2d3fD318a8d94cf05",
+	id: "0xC5A937EFebD7f7362Cba9A72cE07272e5c7f86b7", //bsc
 	type: "ERC721",
 	isLazy: true,
 	isLazySupported: true,
@@ -122,9 +124,12 @@ const Dashboard: React.FC<DashboardProps> = ({ provider, sdk, accounts }) => {
 			}
 		}
 	}
-
+	
 	const getTokenById = async (tokenId: string) => {
-		const token = await sdk.apis.nftItem.getNftItemById({ itemId: `0x6ede7f3c26975aad32a475e1021d8f6f39c89d82:${tokenId}` })
+		//const token = await sdk.apis.nftItem.getNftItemById({ itemId: `0x6ede7f3c26975aad32a475e1021d8f6f39c89d82:${tokenId}` })
+		//const token = await sdk.apis.nftItem.getNftItemById({ itemId: `0xB0EA149212Eb707a1E5FC1D2d3fD318a8d94cf05:${tokenId}` })
+		const token = await sdk.apis.nftItem.getNftItemById({ itemId: `0xC5A937EFebD7f7362Cba9A72cE07272e5c7f86b7:${tokenId}` })
+
 		if (token) {
 			setCreateOrderForm({
 				...createOrderForm,
