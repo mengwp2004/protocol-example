@@ -6,8 +6,8 @@ import Dashboard from "./Dashboard"
 import { Web3Ethereum } from "@rarible/web3-ethereum"
 
 //const NETWORK = "rinkeby"
-//const NETWORK = "ropsten";
-const NETWORK = "bsc";
+const NETWORK = "ropsten";
+//const NETWORK = "bsc";
 function App() {
 	const [provider, setProvider] = useState<any>()
 	const [sdk, setSdk] = useState<RaribleSdk>()
